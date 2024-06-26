@@ -2,16 +2,14 @@ import { useEffect, useState } from 'react'
 import { CheckListProvider } from '../../context/ChecklistContext'
 import Checklist from './Checklist'
 import { Settings } from './Settings'
-import ejemploA from './BASES/ejemploA.json'
-import ejemploB from './BASES/ejemploB.json'
-import ejemploC from './BASES/ejemploB.json'
+import despachoTicket from './BASES/despachoTicket.json'
+import tipoFacturacion from './BASES/tipoFacturacion.json'
 
 const CheckListBase = ({ checklist }) => {
 	const [zoom, setZoom] = useState(false)
 	const [cheklists, setCheckList] = useState({
-		ejemploA,
-		ejemploB,
-		ejemploC,
+		despachoTicket,
+		tipoFacturacion,
 	})
 	const zoomChecklist = () => {
 		setZoom(!zoom)

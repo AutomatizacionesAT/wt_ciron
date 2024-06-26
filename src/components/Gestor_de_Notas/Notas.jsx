@@ -1,9 +1,11 @@
 import { useState } from 'react'
-import nota_ejemplo from './BASES/nota_ejemplo.json'
+import aperturaTickets from './BASES/aperturaTickets.json'
+import escalamientoCED from './BASES/escalamientoCED.json'
 import FormNote from './FormNote'
 const Notas = ({ nameNote }) => {
 	const [notas, setNotas] = useState({
-		nota_ejemplo,
+		aperturaTickets,
+		escalamientoCED,
 	})
 	return (
 		<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>

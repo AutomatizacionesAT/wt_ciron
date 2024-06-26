@@ -1,0 +1,88 @@
+{
+	"TITLE": "Despacho de tickets",
+	"DESCRIPCIONES": [
+		{
+			"check": "A",
+			"html": [
+				{ "TITULO": "Se recibe el caso en la bandeja de AWA" },
+				{
+					"P": "1. Debes abrir el caso e ingresar a los detalles."
+				},
+				{
+					"P": "2. En notas externas debes dejar la plantilla de apertura proactiva."
+				},
+				{
+					"P": "3. En notas internas debes dejar el ping que le hiciste a la ip en CRT."
+				}
+			]
+		},
+		{
+			"check": "B",
+			"html": [
+				{ "TITULO": "Revisar el estado del ticket" },
+				{
+					"P": "1. Si el ticket está estado Nuevo debes cambiarlo y debe quedar en estado &boldEn Espera&bold."
+				},
+				{
+					"P": "2. Una vez se cambie el estado a En Espera, también debes cambiar el Motivo para poner en espera y debe quedar en &boldEspera Cliente&bold."
+				}
+			]
+		},
+		{
+			"check": "C",
+			"html": [
+				{ "TITULO": "Cambiar la cola de asignación" },
+				{
+					"P": "1. Valida en la base Maestra de clientes:"
+				},
+				{ "LINK": "https://login.microsoftonline.com/0abdd594-13d3-401e-a704-19830f19e888/oauth2/authorize?client%5Fid=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&response%5Fmode=form%5Fpost&response%5Ftype=code%20id%5Ftoken&resource=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&scope=openid&nonce=EB78F3A0C16B62DF99B7D3FC9B3EEC3C573094EA4B536DF5%2DB7C0AEA42A07E469A67482A9A85EECEAC5229ED6C36F52A89A034584A70CBC67&redirect%5Furi=https%3A%2F%2Fxyzlatam%2Dmy%2Esharepoint%2Ecom%2F%5Fforms%2Fdefault%2Easpx&state=OD0w&claims=%7B%22id%5Ftoken%22%3A%7B%22xms%5Fcc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&wsucxt=1&cobrandid=11bd8083%2D87e0%2D41b5%2Dbb78%2D0bc43c8a8e8a&client%2Drequest%2Did=c87c36a1%2Dc093%2D5000%2Dcaaa%2Dd5eb0b29d449", "NAME": "MAESTRA DE CLIENTES" },
+				{
+					"DATA_BOOL": "CLIENTE CON OUTSOURCING",
+					"POS": "A",
+					"SI": [
+						{
+							"P": "- Validar en la base correspondiente para que determines a que cola debes despachar el ticket:"
+						},
+						{ "LINK": "https://login.microsoftonline.com/0abdd594-13d3-401e-a704-19830f19e888/oauth2/authorize?client%5Fid=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&response%5Fmode=form%5Fpost&response%5Ftype=code%20id%5Ftoken&resource=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&scope=openid&nonce=FE6FBB091D7799DE45AE3D206B8A3FDBA4BEA914A74E5E06%2D5BEC69C6BC7444D1327CF8341D43E3277BD40D8147A053C9A5E308943AE832C4&redirect%5Furi=https%3A%2F%2Fxyzlatam%2Dmy%2Esharepoint%2Ecom%2F%5Fforms%2Fdefault%2Easpx&state=OD0w&claims=%7B%22id%5Ftoken%22%3A%7B%22xms%5Fcc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&wsucxt=1&cobrandid=11bd8083%2D87e0%2D41b5%2Dbb78%2D0bc43c8a8e8a&client%2Drequest%2Did=1a7d36a1%2De09f%2D5000%2Dcbf6%2D1657d3e03c86", "NAME": "BASE OUTSUORCING" }
+					],
+					"NO": [
+						{
+							"P": "- Despachar a la Cola &boldDL-CO-OPE-Esp OPS-Monitoring&bold para Colombia y &boldDL-BR-OPE-Esp OPS-Monitoring&bold para Brasil."
+						}
+					]
+				},
+				{
+					"NOTA": "Si el outsourcing no se encuentra en horario comercial, NO debe despachar el caso a la cola que le indique la base, tendrá que derivar el caso a la COLA &boldDL-CO-OPE-Esp OPS-Monitoring&bold para Colombia y &boldDL-BR-OPE-Esp OPS-Monitoring&bold para Brasil",
+					"TITLE": "IMPORTANTE!",
+					"TYPE": "info"
+				}
+			]
+		},
+		{
+			"check": "D",
+			"html": [
+				{ "TITULO": "Asignar el caso al ingeniero encargado" },
+				{
+					"P": "1. Si el cliente NO tiene outsoursing, se debe asignar el caso a los ingenieros que se encuentren en turno, recuerda que son los que nos relacionan a través del grupo de Dispacth por Teams.!"
+				},
+				{
+					"P": "2 Si tiene outsorcing, debes validar en la Base de Outsourcing y asignar a la persona que registre en el excel."
+				},
+				{
+					"NOTA": "Solo es posible asignar a los ingenieros que se encuentran en el Excel, &boldsi&bold están en &boldhorario comercial&bold. En &boldhorario overtime&bold se asignan a los ingenieros que nos relacionen en el grupo de teams",
+					"TITLE": "IMPORTANTE!",
+					"TYPE": "info"
+				}
+			]
+		},
+		{
+			"check": "E",
+			"html": [
+				{ "TITULO": "Guardar el caso" },
+				{
+					"P": "1. El último paso es dar clic en guardar para que el ticket sea despachado correctamente."
+				}
+			]
+		}
+	]
+}

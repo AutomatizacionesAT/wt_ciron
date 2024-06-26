@@ -1,0 +1,81 @@
+{
+	"TITLE": "Tipo de facturación",
+	"DESCRIPCIONES": [
+		{
+			"check": "A",
+			"html": [
+				{ "TITULO": "Saludo y validación de cliente" },
+				{
+					"P": "1. Cirion Technologies buenos días / tardes / noches, mi nombre es xxxxxxxx en que le puedo ayudar"
+				},
+				{
+					"P": "2. Después de la respuesta del cliente valide los datos de la cuenta para confirmar cual es empresa o sede afectada."
+				},
+				{
+					"LIST": [
+						"ID del Servicio o # del circuito",
+						"Nombre de la persona que se comunica",
+						"Contacto"
+					]
+				},
+				{
+					"P": "3. Analizar el motivo de la llamada del cliente para determinar cómo crear el caso correctamente."
+				}
+			]
+		},
+		{
+			"check": "B",
+			"html": [
+				{ "TITULO": "Revisar el estado del ticket" },
+				{
+					"P": "1. Ingresa en el documento:"
+				},
+				{ "LINK": "https://login.microsoftonline.com/0abdd594-13d3-401e-a704-19830f19e888/oauth2/authorize?client%5Fid=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&response%5Fmode=form%5Fpost&response%5Ftype=code%20id%5Ftoken&resource=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&scope=openid&nonce=8A2B08356868B44EB37A791EBD905BD8E4EC1C93659C137F%2D4B27F436D13A9039ADD4EBF945F428503CB7C14DA9CCF117B05869ADEC729ADB&redirect%5Furi=https%3A%2F%2Fxyzlatam%2Dmy%2Esharepoint%2Ecom%2F%5Fforms%2Fdefault%2Easpx&state=OD0w&claims=%7B%22id%5Ftoken%22%3A%7B%22xms%5Fcc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&wsucxt=1&cobrandid=11bd8083%2D87e0%2D41b5%2Dbb78%2D0bc43c8a8e8a&client%2Drequest%2Did=458836a1%2D70bd%2D5000%2Dcaaa%2Ddd672599ed5a", "NAME": "CAUSALES DE FACTURACIÓN" },
+				{
+					"P": "- y valida si la solicitud del cliente se encuentra dentro de las opciones del cuadro, si no aparece asóciala a la que sea más parecida según tu análisis."
+				},
+				{
+					"P": "2. Dentro del cuadro encontraras dos tipos de causales, &boldConsultas y Disputas&bold, son las únicas que podrás utilizar para la creación de tickets en Service Now."
+				},
+				{ "IMG": "ch1-img1.png", "SPACE": "42%" },
+				{
+					"NOTA": "Las causales de facturación que aparecen en el documento como &boldProactivo, Requerimiento y Soporte&bold no las gestionamos desde Atento",
+					"TITLE": "IMPORTANTE!",
+					"TYPE": "info"
+				},
+				{
+					"P": "2. Una vez identifiques el tipo de causal de facturación, puedes proceder a crear el caso a través de service Now."
+				}
+			]
+		},
+		{
+			"check": "C",
+			"html": [
+				{ "TITULO": "Creación del caso" },
+				{
+					"P": "1. Ingresa a través del siguiente link:"
+				},
+				{ "LINK": "https://sacfs.service-now.com/esc?id=emp_taxonomy_topic&topic_id=632e31fe87f47d902beeeb930cbb357a", "NAME": "Creación Casos Billing" },
+				{
+					"P": "2. Selecciona el tipo de solicitud que vas a crear. (Consulta o Disputa)"
+				},
+				{ "IMG": "ch1-img2.png", "SPACE": "15%" },
+				{
+					"P": "3. Una vez selecciones el tipo de solicitud, deberás ingresar al formulario que corresponda según la problemática del cliente."
+				},
+				{ "IMG": "ch1-img3.png", "SPACE": "78%" },
+				{
+					"P": "4. Llena todos los campos del formulario, ten presente que dependiendo del formulario te solicitará diferente información y recuerda que la descripción debe detallarse para responder oportunamente al cliente."
+				},
+				{ "IMG": "ch1-img4.png", "SPACE": "55%" },
+				{
+					"P": "5. Debes seleccionar las facturas mencionadas por el cliente en caso de que corresponda y recuerda que puedes agregar contactos o adjuntar archivos para que el área encargada pueda analizar el caso."
+				},
+				{ "IMG": "ch1-img5.png", "SPACE": "55%" },
+				{
+					"P": "6. Una vez llenes toda la información requerida envías el caso para que quede guardado."
+				}
+			]
+		}
+	]
+}

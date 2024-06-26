@@ -124,9 +124,8 @@
 	height: 60rem;
 	background: light-dark($w-color, $b-color);
 	color: light-dark($b-color, $w-color);
-	box-shadow: 0px 0px 0px 24px light-dark(rgba($w-color, 0.6), rgba($b-color, 0.6)),
-		0px 10px 29px 20px rgba(0, 0, 0, 0.2);
 	border: 1px solid light-dark(rgba($w-color, 1), rgba($b-color, 1));
+	box-shadow: 2px 2px 10px black;
 
 	border-radius: 2rem;
 	-webkit-border-radius: 2rem;
@@ -148,7 +147,7 @@
 		button {
 			font-family: inherit;
 			font-size: 1.8rem;
-			background: $t-color;
+			background: $s-color;
 			color: $w-color;
 			align-items: center;
 			fill: rgb(155, 153, 153);
@@ -180,7 +179,7 @@
 		}
 
 		button:hover {
-			background: $s2-color;
+			background: $p-color;
 		}
 
 		button:hover .svg-wrapper {
@@ -190,7 +189,6 @@
 
 		button:hover svg {
 			transform: translateX(4rem) scale(1.1);
-			fill: $b-color;
 			-webkit-transform: translateX(4rem) scale(1.1);
 			-moz-transform: translateX(4rem) scale(1.1);
 			-ms-transform: translateX(4rem) scale(1.1);
@@ -198,7 +196,6 @@
 		}
 		button[type='button']:hover svg {
 			transform: translateX(6rem) scale(1.1);
-			fill: $b-color;
 			-webkit-transform: translateX(6rem) scale(1.1);
 			-moz-transform: translateX(6rem) scale(1.1);
 			-ms-transform: translateX(6rem) scale(1.1);
@@ -260,10 +257,10 @@
 		&__title {
 			font-size: 3rem;
 			text-align: center;
-			color: $p-color;
+			color: light-dark($p-color, $s-color);;
 
-			text-shadow: -1px -1px 0 $w-color, 1px -1px 0 $w-color, -1px 1px 0 $w-color,
-				1px 1px 0 $w-color;
+			// text-shadow: -1px -1px 0 $w-color, 1px -1px 0 $w-color, -1px 1px 0 $w-color,
+			// 	1px 1px 0 $w-color;
 			letter-spacing: 1px;
 		}
 		&__btn-reiniciar {

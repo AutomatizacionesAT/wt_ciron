@@ -30,10 +30,12 @@ const App = () => {
 			<Routes>
 				<Route path="/" element={<Bienvenida />} />
 				<Route path="/checklist" element={<CheckListBase checklist="ejemploA" />} />
-				<Route path="/checklist/ejemploA" element={<CheckListBase checklist="ejemploA" />} />
-				<Route path="/checklist/ejemploB" element={<CheckListBase checklist="ejemploB" />} />
-				<Route path="/checklist/ejemploC" element={<CheckListBase checklist="ejemploC" />} />
-				<Route path="/notas/nota_ejemplo" element={<Notas nameNote="nota_ejemplo" />} />
+				<Route path="/checklist/despachoTicket" element={<CheckListBase checklist="despachoTicket" />} />
+				<Route path="/checklist/tipoFacturacion" element={<CheckListBase checklist="tipoFacturacion" />} />
+				<Route path="/gestorNotas" element={<Notas nameNote="nota_ejemplo" />} />
+				<Route path="/gestorNotas/aperturaTickets" element={<Notas nameNote="aperturaTickets" />} />
+				<Route path="/gestorNotas/escalamientoCED" element={<Notas nameNote="escalamientoCED" />} />
+				<Route path="/gestorNotas" element={<Notas nameNote="nota_ejemplo" />} />
 				<Route path="/tipificador" element={<Tipificador />} />
 				<Route path="/calculadoras/estandar" element={<Tipificador />} />
 				<Route path="/timeline" element={<TimeLine />} />

@@ -10,12 +10,12 @@ const projectNavbar = [
 		icon: 'checklist',
 		dropDown: [
 			{
-				title: 'Ejemplo A',
-				route: '/checklist/ejemploA',
+				title: 'Despacho de ticket',
+				route: '/checklist/despachoTicket',
 			},
 			{
-				title: 'Ejemplo B',
-				route: '/checklist/ejemploB',
+				title: 'Tipo de facturación',
+				route: '/checklist/tipoFacturacion',
 			},
 		],
 	},
@@ -23,6 +23,16 @@ const projectNavbar = [
 		title: 'Gestor de notas',
 		route: '/gestorNotas',
 		icon: 'note',
+		dropDown: [
+			{
+				title: 'Apertura de tickets',
+				route: '/gestorNotas/aperturaTickets',
+			},
+			{
+				title: 'Escalamiento al CED',
+				route: '/gestorNotas/escalamientoCED',
+			},
+		],
 	},
 	{
 		title: 'Gestor de correos',
@@ -31,7 +41,7 @@ const projectNavbar = [
 	},
 	{
 		title: 'Glosario',
-		route: '/checklist',
+		route: '/glosario',
 		icon: 'book',
 	},
 	{
@@ -43,11 +53,6 @@ const projectNavbar = [
 		title: 'Consulta de documentación',
 		route: '/consultaDocumentacion',
 		icon: 'library',
-	},
-	{
-		title: 'Preguntas Frecuentes',
-		route: '/preguntasFrecuentes',
-		icon: 'question',
 	},
 ]
 
