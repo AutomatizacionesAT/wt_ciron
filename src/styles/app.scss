@@ -1,0 +1,86 @@
+@use 'variables' as *;
+
+.app {
+	display: flex;
+	height: 100vh;
+	& .welcome {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		font-weight: bold;
+		width: 100%;
+		height: 100vh;
+		text-align: center;
+		color: light-dark($b-color, $w-color);
+		& span {
+			display: block;
+			font-size: 10rem;
+			text-shadow: 1px 1px 4px black;
+			margin: 1rem;
+		}
+
+		&__image{
+			margin-top: 2rem;
+			width: 18%;
+			background-color: $p-color;
+			padding: 10px 20px;
+			border-radius: 15px;
+			box-shadow: 2px 2px 10px black; 
+		}
+
+		& p {
+			font-size: 2.6rem;
+			text-wrap: balance;
+		}
+
+		& .contador {
+			display: flex;
+			gap: 1.2rem;
+			margin: 2rem 0;
+			align-items: center;
+			& button {
+				cursor: pointer;
+				font-size: 4rem;
+				background: light-dark($p-color, $s-color);
+				color: light-dark($w-color, $w-color);
+				border-radius: 0.8rem;
+				-webkit-border-radius: 0.8rem;
+				-moz-border-radius: 0.8rem;
+				-ms-border-radius: 0.8rem;
+				-o-border-radius: 0.8rem;
+				padding: 0.8rem 1.2rem;
+				&:hover {
+					box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+				}
+			}
+
+			& p {
+				text-align: center;
+				font-size: 4rem;
+				width: 6rem;
+
+				&:focus {
+					outline: none;
+				}
+			}
+		}
+	}
+
+	.testImages {
+		& .image {
+			width: 60px;
+			font-size: 1rem;
+		}
+	}
+	& .dato-buscado {
+		&.hide {
+			display: none;
+		}
+	}
+	transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+}
