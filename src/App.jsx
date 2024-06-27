@@ -9,11 +9,11 @@ import Bienvenida from './components/Bienvenida/Bienvenida'
 import Corrector from './components/Corrector/Corrector'
 import GlobalContext, { GlobalProvider } from './context/GlobalContext'
 import CheckListBase from './components/Checklist/CheckListBase'
-import Testeos from './components/Test/Testeos'
 import Notas from './components/Gestor_de_Notas/Notas'
 import { useContext } from 'react'
-import TimeLine from './components/TimeLine/TimeLine'
-import Tipificador from './components/Tipificador/Tipificador'
+import AplicativosWeb from './components/AplicativosWeb/AplicativosWeb'
+import Glosario from './components/Glosario/Glosario'
+import ConsultaDocumentacion from './components/ConsultaDocumentacion/ConsultaDocumentacion'
 
 const App = () => {
 	const { scheme } = useContext(GlobalContext)
@@ -36,11 +36,10 @@ const App = () => {
 				<Route path="/gestorNotas/aperturaTickets" element={<Notas nameNote="aperturaTickets" />} />
 				<Route path="/gestorNotas/escalamientoCED" element={<Notas nameNote="escalamientoCED" />} />
 				<Route path="/gestorNotas" element={<Notas nameNote="nota_ejemplo" />} />
-				<Route path="/tipificador" element={<Tipificador />} />
-				<Route path="/calculadoras/estandar" element={<Tipificador />} />
-				<Route path="/timeline" element={<TimeLine />} />
+				<Route path="/aplicativosWeb" element={<AplicativosWeb />} />
+				<Route path="/glosario" element={<Glosario />} />
+				<Route path="/consultaDocumentacion" element={<ConsultaDocumentacion />} />
 				<Route path="/corrector" element={<Corrector />} />
-				<Route path="/testeos" element={<Testeos />} />
 			</Routes>
 		</div>
 	)

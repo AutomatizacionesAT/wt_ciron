@@ -1,0 +1,206 @@
+@use '@styles/variables.scss' as *;
+
+.bilbioteca {
+    background-color: light-dark(rgba(88, 88, 88, 0.184), rgba(88, 88, 88, 0.0));
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__contenedor {
+        position: relative;
+        width: 100%;
+        max-width: 1000px;
+        height: 80%;
+        
+        margin: 24px;
+        padding: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+        background-color: light-dark(rgba( $p2-color, 0.7), rgba( $g2-color, 0.7));
+        border-radius: 15px;
+        box-shadow: 3px 3px 3px #242424;
+        z-index: 1;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: light-dark(rgba( $p2-color, 0.2), rgba( $g2-color, 0.3));
+            z-index: -1;
+            border-radius: 15px;
+        }
+        &-left {
+            width: 40%;
+            height: 95%;
+            padding: 16px;
+            align-content: center;
+            border-radius: 5px;
+            background-color: light-dark(rgba($w-color, 0.8), rgba($w-color, 0.6));
+            box-shadow: inset 6px 6px 15px #242424;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: light-dark($p2-color, $p-color) light-dark($g2-color, $w-color);
+            &-item {
+                width: 100%;
+                height: 68px;
+                padding: 8px 16px;
+                margin: 15px 0;
+                display: flex;
+                align-items: center;
+                border-radius: 10px;
+                box-shadow: inset -5px 5px 10px #242424;
+                background-color: light-dark($p2-color, $g2-color);
+                color: light-dark($w-color, $p2-color);
+                font-size: 1.4rem;
+                font-weight: 800;
+                border-bottom: 2px solid light-dark($w-color, $p2-color);
+                text-wrap: balance;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+                &:hover {
+                    transform: scale(1.02);
+                    background-color: light-dark(lighten($p2-color, 8%), lighten($g2-color, 8%));
+                    box-shadow: 2px 2px 2px #242424;
+                }
+                &--active {
+                    transform: scale(1.02);
+                    background-color: light-dark(lighten($p2-color, 8%), lighten($g2-color, 8%));
+                    box-shadow: 2px 2px 2px #242424;
+                }
+            }
+        }
+        &-right {
+            position: relative;
+            width: 50%;
+            height: 95%;
+            padding: 32px;
+            display: flex;
+            background-color: light-dark(lighten($p2-color, 8%), lighten($g2-color, 8%));
+            border-bottom-right-radius: 39px;
+            z-index: 1;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: light-dark(rgba( $p2-color, 0.05), rgba( $w-color, 0.01)),;
+                z-index: -1;
+                border-radius: 15px;
+            }
+            &-corner {
+                content: '';
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                right: 0;
+                bottom: 0;
+                background-color: light-dark(rgba( $p2-color, 0.05), rgba( $w-color, 0.01));
+                z-index: -5;
+                border-bottom-right-radius: 39px;
+                box-shadow: -3px -3px 15px black, -1px 5px 2px black, 1px -2px 2px black;
+            }
+            &-content {
+
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                gap: 24px;
+                & h2 {
+                    width: 100%;
+                    text-align: center;
+                    color: white;
+                    font-size: 2rem;
+                    font-weight: 800;
+                    text-shadow: 2px 2px 2px black;
+                }
+                & p {
+                    width: 100%;
+                    color: black;
+                    text-wrap: balance;
+                    font-size: 1.6rem;
+                    text-align: center;
+                    font-weight: 800;
+                }
+                & a:nth-child(3) {
+                    width: 70px;
+                    margin: 12px auto;
+                    height: 80px;
+                    color: light-dark(rgba( $p2-color, 0.75), rgba( $s-color, 0.75));
+                    transition: all 0.3s ease-in-out;
+                    &:hover {
+                        color: light-dark(rgba( $p2-color, 1), rgba( $s-color, 1));
+                        transform: scale(1.2) rotate(15deg);
+                    }
+                }
+                & a:nth-child(4) {
+                    width: 70px;
+                    margin: 12px auto;
+                    height: 80px;
+                    color: light-dark(rgba( $p2-color, 0.75), rgba( $s-color, 0.75));
+                    &:hover {
+                        color: light-dark(rgba( $p2-color, 1), rgba( $s-color, 1));
+                        transform: scale(1.2) rotate(15deg);
+                    }
+                }
+            }
+        }
+
+
+        ///animacin del libro
+        & .loader {
+            position: absolute;
+            top: 10px;
+            left: -20px;
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            --book-color: #f1775b;
+            --book-cover-color: #506c86;
+        }
+        & .book {
+            width: 100px;
+            height: 13px;
+            background-color: var(--book-color);
+            border-bottom: 4px solid black;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-end;
+            position: relative;
+        }
+        & .page {
+            width: 50%;
+            height: 2px;
+            background-color: var(--book-color);
+            animation: paging 0.7s ease-out infinite;
+            transform-origin: left;
+        }
+        & .page2 {
+            width: 50%;
+            height: 2px;
+            background-color: var(--book-color);
+            animation: paging 0.8s ease-out infinite;
+            transform-origin: left;
+            position: absolute;
+        }
+        @keyframes paging {
+            10% {
+            transform: rotateZ(0deg);
+            }
+            100% {
+            transform: rotateZ(-180deg);
+            }
+        }
+    }
+}
