@@ -13,7 +13,6 @@
         width: 100%;
         max-width: 1000px;
         height: 80%;
-        
         margin: 24px;
         padding: 8px;
         display: flex;
@@ -21,7 +20,7 @@
         justify-content: center;
         align-items: center;
         gap: 32px;
-        background-color: light-dark(rgba( $p2-color, 0.7), rgba( $g2-color, 0.7));
+        background-color: light-dark($w-color, $b-color);
         border-radius: 15px;
         box-shadow: 3px 3px 3px #242424;
         z-index: 1;
@@ -32,7 +31,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: light-dark(rgba( $p2-color, 0.2), rgba( $g2-color, 0.3));
+            background-color: light-dark($w-color, $b-color);
             z-index: -1;
             border-radius: 15px;
         }
@@ -45,8 +44,17 @@
             background-color: light-dark(rgba($w-color, 0.8), rgba($w-color, 0.6));
             box-shadow: inset 6px 6px 15px #242424;
             overflow-y: auto;
-            scrollbar-width: thin;
-            scrollbar-color: light-dark($p2-color, $p-color) light-dark($g2-color, $w-color);
+            &::-webkit-scrollbar{
+                width: 10px;
+                box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+                border-radius: 10px;
+                background-color: light-dark($w-color, $b-color);
+            }
+            &::-webkit-scrollbar-thumb{
+                border-radius: 10px;
+                box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+                background-color: light-dark($p-color, $s-color);
+            }
             &-item {
                 width: 100%;
                 height: 68px;
@@ -56,8 +64,8 @@
                 align-items: center;
                 border-radius: 10px;
                 box-shadow: inset -5px 5px 10px #242424;
-                background-color: light-dark($p2-color, $g2-color);
-                color: light-dark($w-color, $p2-color);
+                background-color: light-dark($p-color, $s-color);
+                color: $w-color;
                 font-size: 1.4rem;
                 font-weight: 800;
                 border-bottom: 2px solid light-dark($w-color, $p2-color);
@@ -66,12 +74,12 @@
                 transition: all 0.3s ease-in-out;
                 &:hover {
                     transform: scale(1.02);
-                    background-color: light-dark(lighten($p2-color, 8%), lighten($g2-color, 8%));
+                    background-color: light-dark(#000936, #801867);
                     box-shadow: 2px 2px 2px #242424;
                 }
                 &--active {
                     transform: scale(1.02);
-                    background-color: light-dark(lighten($p2-color, 8%), lighten($g2-color, 8%));
+                    background-color: light-dark(#000936, #801867);
                     box-shadow: 2px 2px 2px #242424;
                 }
             }
@@ -82,9 +90,18 @@
             height: 95%;
             padding: 32px;
             display: flex;
-            background-color: light-dark(lighten($p2-color, 8%), lighten($g2-color, 8%));
-            border-bottom-right-radius: 39px;
+            justify-content: center;
+            align-items: center;
+            background-color: light-dark($p-color, $s-color);
+            border-radius: 20px;
             z-index: 1;
+
+            & h1{
+                color: $w-color;
+                font-size: 2.5rem;
+                font-weight: 800;
+                text-shadow: 2px 2px 2px #242424;
+            }
             &::before {
                 content: '';
                 position: absolute;
@@ -95,6 +112,9 @@
                 background-color: light-dark(rgba( $p2-color, 0.05), rgba( $w-color, 0.01)),;
                 z-index: -1;
                 border-radius: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
             &-corner {
                 content: '';
@@ -131,75 +151,22 @@
                     text-align: center;
                     font-weight: 800;
                 }
-                & a:nth-child(3) {
-                    width: 70px;
-                    margin: 12px auto;
-                    height: 80px;
-                    color: light-dark(rgba( $p2-color, 0.75), rgba( $s-color, 0.75));
-                    transition: all 0.3s ease-in-out;
-                    &:hover {
-                        color: light-dark(rgba( $p2-color, 1), rgba( $s-color, 1));
-                        transform: scale(1.2) rotate(15deg);
+                & a{
+                    & svg{
+                        width: 100px;
+                        height: 100px;
+                        background-color: light-dark($w-color, $b-color);
+                        border-radius: 40px;
+                        padding: 25px 10px;
+                        fill: light-dark($p-color, $s-color);
+                        transition: all 0.1s ease-in-out;
+                        box-shadow: 2px 2px 7px black;
+                        &:hover{
+                            fill: $w-color;
+                            background-color: light-dark(#000936, #801867);
+                        }
                     }
                 }
-                & a:nth-child(4) {
-                    width: 70px;
-                    margin: 12px auto;
-                    height: 80px;
-                    color: light-dark(rgba( $p2-color, 0.75), rgba( $s-color, 0.75));
-                    &:hover {
-                        color: light-dark(rgba( $p2-color, 1), rgba( $s-color, 1));
-                        transform: scale(1.2) rotate(15deg);
-                    }
-                }
-            }
-        }
-
-
-        ///animacin del libro
-        & .loader {
-            position: absolute;
-            top: 10px;
-            left: -20px;
-            width: fit-content;
-            height: fit-content;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            --book-color: #f1775b;
-            --book-cover-color: #506c86;
-        }
-        & .book {
-            width: 100px;
-            height: 13px;
-            background-color: var(--book-color);
-            border-bottom: 4px solid black;
-            display: flex;
-            align-items: flex-start;
-            justify-content: flex-end;
-            position: relative;
-        }
-        & .page {
-            width: 50%;
-            height: 2px;
-            background-color: var(--book-color);
-            animation: paging 0.7s ease-out infinite;
-            transform-origin: left;
-        }
-        & .page2 {
-            width: 50%;
-            height: 2px;
-            background-color: var(--book-color);
-            animation: paging 0.8s ease-out infinite;
-            transform-origin: left;
-            position: absolute;
-        }
-        @keyframes paging {
-            10% {
-            transform: rotateZ(0deg);
-            }
-            100% {
-            transform: rotateZ(-180deg);
             }
         }
     }

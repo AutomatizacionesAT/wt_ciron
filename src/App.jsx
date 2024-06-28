@@ -14,6 +14,7 @@ import { useContext } from 'react'
 import AplicativosWeb from './components/AplicativosWeb/AplicativosWeb'
 import Glosario from './components/Glosario/Glosario'
 import ConsultaDocumentacion from './components/ConsultaDocumentacion/ConsultaDocumentacion'
+import GestorCorreos from './components/GestorCorreos/GestorCorreos'
 
 const App = () => {
 	const { scheme } = useContext(GlobalContext)
@@ -39,6 +40,7 @@ const App = () => {
 				<Route path="/aplicativosWeb" element={<AplicativosWeb />} />
 				<Route path="/glosario" element={<Glosario />} />
 				<Route path="/consultaDocumentacion" element={<ConsultaDocumentacion />} />
+				<Route path="/gestorCorreos" element={<GestorCorreos />} />
 				<Route path="/corrector" element={<Corrector />} />
 			</Routes>
 		</div>

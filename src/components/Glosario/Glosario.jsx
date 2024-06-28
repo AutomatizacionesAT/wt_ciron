@@ -1,5 +1,5 @@
 import { BD_glosario } from './BASES/BD_glosario'
-import Card from './Card'
+import Card from './card'
 import './styles.scss'
 
 export default function AplicativosWeb() {

@@ -1,6 +1,6 @@
 const sendForm = document.getElementById('sendForm')
 const modalSession = document.querySelector('.session__modal')
-if (sessionStorage.length == 0 || sessionStorage.session == 'true') {
+if (sessionStorage.length == 0 || sessionStorage.session == 'false') {
 	sendForm.parentNode.parentNode.classList.remove('hide')
 } else {
 	sendForm.parentNode.parentNode.classList.add('hide')

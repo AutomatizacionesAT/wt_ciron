@@ -19,21 +19,21 @@ const projectNavbar = [
 			},
 		],
 	},
-	{
-		title: 'Gestor de notas',
-		route: '/gestorNotas',
-		icon: 'note',
-		dropDown: [
-			{
-				title: 'Apertura de tickets',
-				route: '/gestorNotas/aperturaTickets',
-			},
-			{
-				title: 'Escalamiento al CED',
-				route: '/gestorNotas/escalamientoCED',
-			},
-		],
-	},
+	// {
+	// 	title: 'Gestor de notas',
+	// 	route: '/gestorNotas',
+	// 	icon: 'note',
+	// 	dropDown: [
+	// 		{
+	// 			title: 'Apertura de tickets',
+	// 			route: '/gestorNotas/aperturaTickets',
+	// 		},
+	// 		{
+	// 			title: 'Escalamiento al CED',
+	// 			route: '/gestorNotas/escalamientoCED',
+	// 		},
+	// 	],
+	// },
 	{
 		title: 'Gestor de correos',
 		route: '/gestorCorreos',
