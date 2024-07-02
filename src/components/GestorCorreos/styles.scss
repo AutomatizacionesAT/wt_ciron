@@ -83,8 +83,8 @@
         & textarea{
           width: 90%;
           height: 70%;
-          background-color: light-dark(rgb(230, 230, 230), #1f2127);
-          color: light-dark($p-color, $s-color);
+          background-color: light-dark(rgb(230, 230, 230), $p-color);
+          color: light-dark($p-color, $w-color);
           border-radius: 15px;
           padding: 2rem;
           font-size: 1.8rem;

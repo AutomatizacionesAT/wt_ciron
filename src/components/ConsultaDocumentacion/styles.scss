@@ -92,7 +92,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: light-dark($p-color, $s-color);
+            background-color: light-dark($p-color, $p-color);
             border-radius: 20px;
             z-index: 1;
 
