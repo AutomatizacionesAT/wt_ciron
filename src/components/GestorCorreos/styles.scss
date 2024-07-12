@@ -60,12 +60,14 @@
 
               &.act{
                 opacity: 1;
-                filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.616));
+                -webkit-filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.616));
+                        filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.616));
               }
   
               &:hover{
                 opacity: 1;
-                filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.616));
+                -webkit-filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.616));
+                        filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.616));
               }
             }
           }
