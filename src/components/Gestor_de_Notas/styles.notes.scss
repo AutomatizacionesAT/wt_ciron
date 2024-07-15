@@ -1,75 +1,125 @@
 @use '../../styles/variables' as *;
 
-.WtField {
+
+.gestorNotas{
+	width: 100%;
+	height: 100vh;
 	display: flex;
+	justify-content: center;
 	align-items: center;
-	position: relative;
-	margin: 8px;
-	width: 200px;
-	min-width: 120px;
-	&__input {
-		width: 100%;
-		font-size: 1.4rem;
-		background: #fff;
-		padding: 0.8rem;
-		border: 2px solid $g-color;
-		border-radius: 10px;
-		outline: none;
-		color: #0d0c22;
-		&::placeholder {
-			color: gray; /* Cambia este color al que prefieras */
-			opacity: 1; /* Necesario para algunos navegadores para que el color se vea correctamente */
-		}
-		&.iconFalse {
-			padding: 0.8rem;
-		}
-		&::placeholder {
-			color: rgba($p-color, 0.4);
-		}
-		&:focus,
-		input:hover {
-			outline: none;
-			border-color: rgb(32, 129, 255);
-			background-color: #ffffff;
-			box-shadow: 0 0 0 5px rgba(63, 140, 255, 0.3);
-		}
-		transition: 0.3s ease;
-		-webkit-transition: 0.3s ease;
-		-moz-transition: 0.3s ease;
-		-ms-transition: 0.3s ease;
-		-o-transition: 0.3s ease;
-	}
-	&__error {
-		position: absolute;
-		top: 50%;
-		width: 100%;
-		text-align: center;
-		background: #ff6767;
-		& span {
-			width: 100%;
-			line-height: 1.6rem;
-			font-size: 1.2rem;
-			margin-top: 0.4rem;
-			color: #fff;
-			border-top-left-radius: 0.4rem;
-			border-top-right-radius: 0.4rem;
-		}
-		transform: translateY(-50%);
-		-webkit-transform: translateY(-50%);
-		-moz-transform: translateY(-50%);
-		-ms-transform: translateY(-50%);
-		-o-transform: translateY(-50%);
-	}
-	& svg {
-		position: absolute;
-		left: 1rem;
-		fill: gray;
-		width: 1rem;
-		height: 1rem;
-	}
-	& .styleError {
-		border-color: #ff6767;
-		background-color: #ffeded;
-		box-shadow: 0 0 0 5px rgba(255, 63, 63, 0.3);
-	}
+}
+
+.form {
+  background-color: white;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 90%;
+  padding: 20px;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid $p-color;
+  box-shadow: 2px 2px 10px black;
+}
+
+.title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & h1{
+    color: $p-color;
+    font-family: sans-serif;
+    font-size: 3rem;
+    margin: 0;
+    margin-top: 1rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px black;
+  }
+}
+
+.input-container {
+  height: 30px;
+  position: relative;
+  width: 80%;
+  margin-top: 20px;
+}
+
+.input {
+  background-color: $p-color;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  font-size: 18px;
+  height: 100%;
+  outline: 0;
+  padding: 4px 20px 0;
+  width: 100%;
+}
+
+.cut {
+  background-color: white;
+  border-radius: 10px;
+  height: 20px;
+  left: 20px;
+  position: absolute;
+  top: -20px;
+  transform: translateY(0);
+  transition: transform 200ms;
+  width: 180px;
+}
+
+.cut-short {
+  width: 50px;
+}
+
+.iLabel {
+  color: white;
+  font-family: sans-serif;
+  left: 20px;
+  line-height: 14px;
+  pointer-events: none;
+  position: absolute;
+  transform-origin: 0 50%;
+  transition: transform 200ms, color 200ms;
+  font-size: 1.3rem;
+  top: 8px;
+}
+
+.input:focus ~ .cut {
+  transform: translateY(8px);
+}
+
+.input:focus ~ .iLabel {
+  transform: translateY(-17px) translateX(10px) scale(0.75);
+}
+
+.input:not(:focus) ~ .iLabel {
+  color: white;
+}
+
+.input:focus ~ .iLabel {
+  color: $s-color;
+}
+
+.submit {
+  background-color: #08d;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  height: 50px;
+  margin-top: 38px;
+  text-align: center;
+  width: 100%;
+}
+
+.submit:active {
+  background-color: #06b;
 }

@@ -15,6 +15,7 @@ import AplicativosWeb from './components/AplicativosWeb/AplicativosWeb'
 import Glosario from './components/Glosario/Glosario'
 import ConsultaDocumentacion from './components/ConsultaDocumentacion/ConsultaDocumentacion'
 import GestorCorreos from './components/GestorCorreos/GestorCorreos'
+import AperturaTickets from './components/Gestor_de_Notas/AperturaTickets'
 
 const App = () => {
 	const { scheme } = useContext(GlobalContext)
@@ -34,7 +35,7 @@ const App = () => {
 				<Route path="/checklist/despachoTicket" element={<CheckListBase checklist="despachoTicket" />} />
 				<Route path="/checklist/tipoFacturacion" element={<CheckListBase checklist="tipoFacturacion" />} />
 				<Route path="/gestorNotas" element={<Notas nameNote="nota_ejemplo" />} />
-				<Route path="/gestorNotas/aperturaTickets" element={<Notas nameNote="aperturaTickets" />} />
+				<Route path="/gestorNotas/aperturaTickets" element={<AperturaTickets/>} />
 				<Route path="/gestorNotas/escalamientoCED" element={<Notas nameNote="escalamientoCED" />} />
 				<Route path="/gestorNotas" element={<Notas nameNote="nota_ejemplo" />} />
 				<Route path="/aplicativosWeb" element={<AplicativosWeb />} />
