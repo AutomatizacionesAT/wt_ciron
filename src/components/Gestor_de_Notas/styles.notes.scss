@@ -9,8 +9,8 @@
 	align-items: center;
 }
 
-.form {
-  background-color: white;
+.formGN {
+  background-color: light-dark($w-color, $b-color);
   border-radius: 20px;
   box-sizing: border-box;
   height: 90%;
@@ -20,18 +20,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px solid $p-color;
+  border: 2px solid light-dark($p-color, $s-color);
   box-shadow: 2px 2px 10px black;
 }
 
-.title {
+.titleGN {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 
   & h1{
-    color: $p-color;
+    color: light-dark($p-color, $s-color);
     font-family: sans-serif;
     font-size: 3rem;
     margin: 0;
@@ -41,28 +41,60 @@
   }
 }
 
-.input-container {
-  height: 30px;
+.formContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  overflow-y: auto;
+  &::-webkit-scrollbar{
+    width: 10px;
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: light-dark($w-color, $b-color);
+  }
+  &::-webkit-scrollbar-thumb{
+      border-radius: 10px;
+      box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+      background-color: light-dark($p-color, $s-color);
+  }
+}
+
+.input-containerGN {
   position: relative;
   width: 80%;
   margin-top: 20px;
+
+  & select{
+    background-color: light-dark($p-color, $s-color);
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: light-dark(white, black);
+    font-size: 1.5rem;
+    height: 50px;
+    outline: 0;
+    padding: 0px 20px;
+    width: 100%;
+    cursor: pointer;
+  }
 }
 
-.input {
-  background-color: $p-color;
+.inputGN {
+  background-color: light-dark($p-color, $s-color);
   border-radius: 12px;
   border: 0;
   box-sizing: border-box;
-  color: #eee;
-  font-size: 18px;
-  height: 100%;
+  color: light-dark($w-color, $b-color);
+  font-size: 1.7rem;
+  height: 50px;
   outline: 0;
-  padding: 4px 20px 0;
+  padding: 8px 20px 0;
   width: 100%;
 }
 
 .cut {
-  background-color: white;
+  background-color: light-dark($w-color, $b-color);
   border-radius: 10px;
   height: 20px;
   left: 20px;
@@ -70,15 +102,10 @@
   top: -20px;
   transform: translateY(0);
   transition: transform 200ms;
-  width: 180px;
-}
-
-.cut-short {
-  width: 50px;
+  width: 275px;
 }
 
 .iLabel {
-  color: white;
   font-family: sans-serif;
   left: 20px;
   line-height: 14px;
@@ -86,40 +113,90 @@
   position: absolute;
   transform-origin: 0 50%;
   transition: transform 200ms, color 200ms;
-  font-size: 1.3rem;
-  top: 8px;
+  font-size: 1.2rem;
+  top: 6px;
 }
 
-.input:focus ~ .cut {
+.inputGN:focus ~ .cut {
   transform: translateY(8px);
 }
 
-.input:focus ~ .iLabel {
-  transform: translateY(-17px) translateX(10px) scale(0.75);
+.inputGN:focus ~ .iLabel {
+  transform: translateY(-12px) translateX(10px) scale(0.95);
 }
 
-.input:not(:focus) ~ .iLabel {
+.inputGN:not(:focus) ~ .iLabel {
+  color: light-dark(rgb(192, 192, 192), rgb(214, 214, 214));
+}
+
+.inputGN:focus ~ .iLabel {
+  color: light-dark(black, white);
+}
+
+.buttons{
+  display: flex;
+  margin-top: 2rem;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.buttonGN {
+  all: unset;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0.6em 2em;
+  border: light-dark($p-color, $s-color) solid 0.15em;
+  border-radius: 0.25em;
+  color: light-dark($p-color, $s-color);
+  font-size: 1.7em;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border 300ms, color 300ms;
+  user-select: none;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.726);
+}
+
+.buttonGN p {
+  z-index: 1;
+}
+
+.buttonGN:hover {
   color: white;
 }
 
-.input:focus ~ .iLabel {
-  color: $s-color;
+.buttonGN:active {
+  transform: scale(0.95);
 }
 
-.submit {
-  background-color: #08d;
-  border-radius: 12px;
-  border: 0;
-  box-sizing: border-box;
-  color: #eee;
-  cursor: pointer;
-  font-size: 18px;
-  height: 50px;
-  margin-top: 38px;
-  text-align: center;
-  width: 100%;
+.buttonGN::after, .buttonGN::before {
+  content: "";
+  position: absolute;
+  width: 9em;
+  aspect-ratio: 1;
+  background: light-dark($p-color, $s-color);
+  opacity: 50%;
+  border-radius: 50%;
+  transition: transform 500ms, background 300ms;
 }
 
-.submit:active {
-  background-color: #06b;
+.buttonGN::before {
+  left: 0;
+  transform: translateX(-8em);
+}
+
+.buttonGN::after {
+  right: 0;
+  transform: translateX(8em);
+}
+
+.buttonGN:hover:before {
+  transform: translateX(-1em);
+}
+
+.buttonGN:hover:after {
+  transform: translateX(1em);
 }
