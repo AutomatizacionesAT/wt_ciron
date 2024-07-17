@@ -1,12 +1,12 @@
 @use '../../styles/variables' as *;
 
 
-.gestorNotas{
-	width: 100%;
-	height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.gestorNotas {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .formGN {
@@ -30,7 +30,7 @@
   justify-content: center;
   align-items: center;
 
-  & h1{
+  & h1 {
     color: light-dark($p-color, $s-color);
     font-family: sans-serif;
     font-size: 3rem;
@@ -41,22 +41,24 @@
   }
 }
 
-.formContainer{
+.formContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   overflow-y: auto;
-  &::-webkit-scrollbar{
+
+  &::-webkit-scrollbar {
     width: 10px;
-    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     background-color: light-dark($w-color, $b-color);
   }
-  &::-webkit-scrollbar-thumb{
-      border-radius: 10px;
-      box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-      background-color: light-dark($p-color, $s-color);
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: light-dark($p-color, $s-color);
   }
 }
 
@@ -65,7 +67,17 @@
   width: 80%;
   margin-top: 20px;
 
-  & select{
+  &.or2 {
+    width: 84%;
+    margin-top: 0;
+  }
+
+  &.or3 {
+    margin-top: 0;
+    width: 15%;
+  }
+
+  & select {
     background-color: light-dark($p-color, $s-color);
     border-radius: 12px;
     border: 0;
@@ -78,7 +90,28 @@
     width: 100%;
     cursor: pointer;
   }
+
+  & p{
+    background-color: light-dark($p-color, $s-color);
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: light-dark(white, black);
+    font-size: 1.5rem;
+    height: 50px;
+    outline: 0;
+    padding: 15px 20px;
+    width: 100%;
+  }
 }
+
+.inputsNumber {
+  margin-top: 20px;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
 
 .inputGN {
   background-color: light-dark($p-color, $s-color);
@@ -102,7 +135,19 @@
   top: -20px;
   transform: translateY(0);
   transition: transform 200ms;
-  width: 275px;
+  width: 285px;
+
+  &.or2 {
+    width: 56px;
+  }
+
+  &.or3 {
+    width: 165px;
+  }
+
+  &.or4 {
+    width: 207px;
+  }
 }
 
 .iLabel {
@@ -115,25 +160,37 @@
   transition: transform 200ms, color 200ms;
   font-size: 1.2rem;
   top: 6px;
+
+  &.or2 {
+    left: 10px;
+  }
 }
 
-.inputGN:focus ~ .cut {
+.inputGN:focus~.cut {
   transform: translateY(8px);
 }
 
-.inputGN:focus ~ .iLabel {
+.inputGN:focus~.cut.or2 {
+  transform: translateY(8px) translateX(-9px);
+}
+
+.inputGN:focus~.iLabel {
   transform: translateY(-12px) translateX(10px) scale(0.95);
 }
 
-.inputGN:not(:focus) ~ .iLabel {
+.inputGN:focus~.iLabel.or2 {
+  transform: translateY(-12px) translateX(6px) scale(0.95);
+}
+
+.inputGN:not(:focus)~.iLabel {
   color: light-dark(rgb(192, 192, 192), rgb(214, 214, 214));
 }
 
-.inputGN:focus ~ .iLabel {
+.inputGN:focus~.iLabel {
   color: light-dark(black, white);
 }
 
-.buttons{
+.buttons {
   display: flex;
   margin-top: 2rem;
   width: 100%;
@@ -172,7 +229,8 @@
   transform: scale(0.95);
 }
 
-.buttonGN::after, .buttonGN::before {
+.buttonGN::after,
+.buttonGN::before {
   content: "";
   position: absolute;
   width: 9em;
@@ -199,4 +257,86 @@
 
 .buttonGN:hover:after {
   transform: translateX(1em);
+}
+
+
+.swalNote {
+  width: 800px !important;
+  height: 800px !important;
+  border: 2px solid $s-color !important;
+  box-shadow: 2px 2px 10px black;
+}
+
+.swalIcon {
+  font-size: 1.5rem !important;
+  margin-bottom: 0px;
+}
+
+.swalTitle {
+  font-size: 3rem !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  color: $p-color;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.616);
+}
+
+.notas__textbox {
+  width: 100%;
+  height: 480px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  size-adjust: none;
+  box-shadow: 2px 2px 10px black;
+
+  & textarea {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    resize: none;
+    background-color: #0222c5;
+    font-size: 2rem;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+  }
+}
+
+.swalButton {
+  padding: 15px 25px !important;
+  border: unset !important;
+  border-radius: 15px !important;
+  color: #212121 !important;
+  z-index: 1 !important;
+  background: $s-color !important;
+  position: relative !important;
+  font-weight: 1000 !important;
+  font-size: 17px !important;
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.76) !important;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.76) !important;
+  transition: all 250ms !important;
+  overflow: hidden !important;
+}
+
+.swalButton::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  height: 100% !important;
+  width: 0 !important;
+  border-radius: 15px !important;
+  background-color: #212121 !important;
+  z-index: -1 !important;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27) !important;
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27) !important;
+  transition: all 250ms
+}
+
+.swalButton:hover {
+  color: #e8e8e8 !important;
+}
+
+.swalButton:hover::before {
+  width: 100% !important;
 }

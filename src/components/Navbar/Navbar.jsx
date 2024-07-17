@@ -143,7 +143,7 @@ export default function Navbar() {
 				</button>
 			</div>
 			<div className="sidebar__versionbx" id="sideVersion">
-				1.0.0
+				1.1.0
 			</div>
 			{windowDB &&
 				createPortal(
